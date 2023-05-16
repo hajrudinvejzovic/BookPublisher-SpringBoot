@@ -37,8 +37,8 @@ public class UserController {
     public User updateUser(@RequestBody User user, @PathVariable("id") long userId){
         User existingUser = this.userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with this id: " + userId));
-        existingUser.setFirst_name(existingUser.getFirst_name());
-        existingUser.setLast_name(existingUser.getLast_name());
+        existingUser.setname(existingUser.getname());
+        existingUser.setname(existingUser.getname());
         existingUser.setEmail(user.getEmail());
         return this.userRepository.save(existingUser);
 
