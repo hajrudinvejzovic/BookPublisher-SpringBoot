@@ -2,7 +2,7 @@ package com.SpringProject.SpringBootProject.entity;
 
 import jakarta.persistence.*;
 
-import java.awt.print.Book;
+import com.SpringProject.SpringBootProject.entity.Books;
 
 @Entity
 @Table(name = "Book_Languages")
@@ -13,7 +13,7 @@ public class Book_Languages {
     private long book_languages_id;
     @ManyToOne
     @JoinColumn(name = "books_id")
-    private Book book;
+    private Books book;
     @ManyToOne
     @JoinColumn(name = "languages_id")
     private Languages languages;
@@ -21,17 +21,17 @@ public class Book_Languages {
 
     }
 
-    public Book_Languages(Book book, Languages languages) {
+    public Book_Languages(Books book, Languages languages) {
         super();
         this.book = book;
         this.languages = languages;
     }
 
-    public Book getBook() {
+    public Books getBook() {
         return book;
     }
 
-    public void setBook(Book book) {
+    public void setBook(Books book) {
         this.book = book;
     }
 

@@ -20,7 +20,6 @@ public class Languages {
     }
 
     public Languages(String name, Set<Book_Languages> book_Languages) {
-        super();
         this.name = name;
         this.book_Languages = book_Languages;
     }

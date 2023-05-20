@@ -34,7 +34,6 @@ public class User {
     }
 
     public User(Set<Reports> report, Set<Orders> order, String name, String surname, Cities city, Contacts contact, Payments payment) {
-        super();
         this.report = report;
         this.order = order;
         this.name = name;

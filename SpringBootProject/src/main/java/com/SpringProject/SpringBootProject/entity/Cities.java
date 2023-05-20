@@ -12,7 +12,7 @@ public class Cities {
     private long cities_id;
     @Column(name = "name")
     private String name;
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "city")
     private User user;
     @OneToOne(mappedBy = "city")
     private Authors author;
@@ -23,7 +23,6 @@ public class Cities {
     }
 
     public Cities(String name, User user, Authors author, Employees employee) {
-        super();
         this.name = name;
         this.user = user;
         this.author = author;

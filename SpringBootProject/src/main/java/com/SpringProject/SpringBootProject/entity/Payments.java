@@ -26,7 +26,6 @@ public class Payments {
     }
 
     public Payments(User user, long users_id, Orders order, int amount, LocalDate payment_date) {
-        super();
         this.user = user;
         this.users_id = users_id;
         this.order = order;

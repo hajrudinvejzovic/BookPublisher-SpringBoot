@@ -25,7 +25,6 @@ public class Employees {
     }
 
     public Employees(String name, String surname, Cities city, Contacts contact) {
-        super();
         this.name = name;
         this.surname = surname;
         this.city = city;

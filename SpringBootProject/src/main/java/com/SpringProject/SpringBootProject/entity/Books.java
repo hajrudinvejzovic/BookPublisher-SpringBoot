@@ -52,7 +52,6 @@ public class Books {
     }
 
     public Books(String name, Set<Book_Genres> book_Genres, Set<Book_Authors> book_Authors, Set<Book_Languages> book_Languages, Set<Items_Per_Order> items_Per_Orders, Set<Reports> reports, int publishing_year, int price, boolean bestseller, int isbn, int total_pages, boolean in_stock, boolean availability) {
-        super();
         this.name = name;
         this.book_Genres = book_Genres;
         this.book_Authors = book_Authors;

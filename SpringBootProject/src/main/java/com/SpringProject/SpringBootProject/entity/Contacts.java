@@ -22,7 +22,6 @@ public class Contacts {
     }
 
     public Contacts(User user, Employees employee, long telephone, String email) {
-        super();
         this.user = user;
         this.employee = employee;
         this.telephone = telephone;

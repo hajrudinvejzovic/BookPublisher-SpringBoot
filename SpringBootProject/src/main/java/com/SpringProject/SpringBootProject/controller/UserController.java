@@ -4,11 +4,10 @@ import com.SpringProject.SpringBootProject.entity.User;
 import com.SpringProject.SpringBootProject.exception.ResourceNotFoundException;
 import com.SpringProject.SpringBootProject.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
+import org.springframework.data.domain.Pageable;
 
 @RestController
 @RequestMapping("/api/users")
@@ -17,12 +16,12 @@ public class UserController {
     private UserRepository userRepository;
     //return all users GET
     @GetMapping
-    public List<User> getAllUsers(){
-        return this.userRepository.findAll();
+    public Page<User> findAllUsers(Pageable pageable){
+        return this.userRepository.findAll(pageable);
     }
     //get user by id GET
-    @GetMapping("/{id}")
-    public User getUserById(@PathVariable( value = "id") long userId){
+   @GetMapping("/{id}")
+    public User findUserById(@PathVariable( value = "id") long userId){
         return userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with this id: " + userId));
     }
@@ -37,9 +36,13 @@ public class UserController {
     public User updateUser(@RequestBody User user, @PathVariable("id") long userId){
         User existingUser = this.userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with this id: " + userId));
-        existingUser.setname(existingUser.getname());
-        existingUser.setname(existingUser.getname());
-        existingUser.setEmail(user.getEmail());
+        existingUser.setReport(existingUser.getReport());
+        existingUser.setName(existingUser.getName());
+        existingUser.setOrder(user.getOrder());
+        existingUser.setSurname(existingUser.getSurname());
+        existingUser.setCity(existingUser.getCity());
+        existingUser.setContact(existingUser.getContact());
+        existingUser.setPayment(existingUser.getPayment());
         return this.userRepository.save(existingUser);
 
     }

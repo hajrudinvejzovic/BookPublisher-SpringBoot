@@ -31,7 +31,6 @@ public class Orders {
     }
 
     public Orders(User user, long total_quantity, long total_price, Set<Items_Per_Order> order, Payments payment) {
-        super();
         this.user = user;
         this.total_quantity = total_quantity;
         this.total_price = total_price;

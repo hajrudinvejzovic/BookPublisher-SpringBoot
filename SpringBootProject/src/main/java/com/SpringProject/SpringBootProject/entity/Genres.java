@@ -21,7 +21,6 @@ public class Genres {
     }
 
     public Genres(String name, Set<Book_Genres> bookGenres) {
-        super();
         this.name = name;
         BookGenres = bookGenres;
     }

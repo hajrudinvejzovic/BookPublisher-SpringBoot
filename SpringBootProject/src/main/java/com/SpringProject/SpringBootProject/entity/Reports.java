@@ -2,7 +2,10 @@ package com.SpringProject.SpringBootProject.entity;
 
 import jakarta.persistence.*;
 
-import java.awt.print.Book;
+import com.SpringProject.SpringBootProject.entity.Books;
+
+
+
 
 @Entity
 @Table(name = "Reports")
@@ -12,7 +15,7 @@ public class Reports {
     private long reports_id;
     @ManyToOne
     @JoinColumn(name = "books_id")
-    private Book book;
+    private Books book;
     @ManyToOne
     @JoinColumn(name = "users_id")
     private User user;
@@ -22,18 +25,17 @@ public class Reports {
 
     }
 
-    public Reports(Book book, User user, String description) {
-        super();
+    public Reports(Books book, User user, String description) {
         this.book = book;
         this.user = user;
         this.description = description;
     }
 
-    public Book getBook() {
+    public Books getBook() {
         return book;
     }
 
-    public void setBook(Book book) {
+    public void setBook(Books book) {
         this.book = book;
     }
 
